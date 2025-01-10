@@ -28,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -61,15 +62,20 @@ fun LoginForm(modifier: Modifier = Modifier) {
     Column(modifier = modifier.padding(vertical = 5.dp)) {
         Text(
             text = "Login",
-            modifier = Modifier.fillMaxWidth().wrapContentWidth(Alignment.CenterHorizontally).padding(6.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentWidth(Alignment.CenterHorizontally)
+                .padding(6.dp),
             color = Color(0xFF800080),
             fontSize = 20.sp
         )
         OutlinedTextField(
             value = usernameInput,
             onValueChange = {usernameInput = it},
-            modifier = modifier.fillMaxWidth().padding(6.dp),
-            label = {Text("Username")},
+            modifier = modifier
+                .fillMaxWidth()
+                .padding(6.dp),
+            label = {Text(stringResource(R.string.username))},
             singleLine = true,
             trailingIcon = {
                 val icon: Painter = painterResource(R.drawable.loginusernameicon)
@@ -83,9 +89,11 @@ fun LoginForm(modifier: Modifier = Modifier) {
         TextField(
             value = passwordInput,
             onValueChange = {passwordInput = it},
-            modifier = modifier.fillMaxWidth().padding(6.dp),
+            modifier = modifier
+                .fillMaxWidth()
+                .padding(6.dp),
             visualTransformation = PasswordVisualTransformation(),
-            label = {Text("Password")},
+            label = {Text(stringResource(R.string.password))},
             singleLine = true,
             trailingIcon = {
                 val icon: Painter = painterResource(R.drawable.loginpassword)
@@ -95,10 +103,12 @@ fun LoginForm(modifier: Modifier = Modifier) {
             }
         )
         Button(
-            modifier = Modifier.fillMaxWidth().padding(8.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF800080)),
             onClick = {}){
-            Text("Submit")
+            Text(stringResource(R.string.submit))
         }
     }
 }

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BMI</string>
+    <string name="weight_input_label">Weight</string>
+    <string name="height_input_label">Height</string>
+</resources>
